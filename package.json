@@ -1,0 +1,11 @@
+{
+  "name": "team-recursive-circus",
+  "version": "1.0.0",
+  "description": "**CODENAME: _Fast Forward_**\r - Project 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "author": "Recursive Circus",
+  "license": "ISC"
+}
