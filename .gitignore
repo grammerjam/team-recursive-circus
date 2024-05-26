@@ -1,0 +1,63 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# OS or temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build output
+/dist/
+/build/
+/out/
+
+# Environment variables file
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Caches and backup files
+.cache/
+.npm
+.npmrc
+.npmignore
+.eslintcache
+*.log
+*.bak
+*.backup
+*.swp
+
+# Miscellaneous
+*.class
+*.lock
+*.DS_Store?
+*.zip
+*.gz
+*.tar
+*.rar
+*.map
+
+# Ignore .gitignore and .gitattributes files
+!.gitignore
+!.gitattributes
