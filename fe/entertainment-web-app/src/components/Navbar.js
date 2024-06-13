@@ -9,13 +9,13 @@ import avatar from "../assets/image-avatar.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#161d2f] text-white p-4 flex lg:flex-col lg:h-screen lg:w-20 justify-between items-center">
+    <nav className="bg-[#161d2f] text-white p-4 flex justify-between items-center rounded-xl lg:flex-col lg:h-screen lg:w-20 lg:justify-normal">
       <img
         src={logo}
         alt="Logo"
         className="w-[25px] h-[20px] md:w-[32px] md:h-[25.6px]"
       />
-      <div className="flex space-x-4 lg:flex-col lg:space-x-0 lg:space-y-8">
+      <div className="flex space-x-4 lg:flex-col lg:space-x-0 lg:space-y-8 lg:mt-16">
         <Link to="/">
           <img src={homeIcon} alt="Home" className="w-6 h-6" />
         </Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
       <img
         src={avatar}
         alt="Avatar"
-        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40] lg:h-[40]"
+        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40] lg:h-[40] lg:mt-auto"
       />
     </nav>
   );
