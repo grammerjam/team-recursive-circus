@@ -33,13 +33,13 @@ const Signup = () => {
     <div className="bg-[#10131d] flex flex-row justify-center w-full h-screen">
       <section
         id="signup"
-        className="container my-auto mx-auto w-1/4 h-1/2 bg-[#161d2f] flex flex-row"
+        className="container rounded my-auto mx-auto w-1/4 h-1/2 bg-[#161d2f] flex flex-col"
       >
         <div id="heading" className="mx-auto">
           <h3 className="text-white">Sign Up</h3>
         </div>
-        <form className="" onSubmit={handleSubmit}>
-          <div>
+        <form className="text-white grid grid-cols-1 gap-2" onSubmit={handleSubmit}>
+          <div className="">
             <label onSubmit={handleSubmit}>Email:</label>
             <input
               type="email"
@@ -73,7 +73,7 @@ const Signup = () => {
             />
           </div>
           {error && <p className="text-red">{error}</p>}
-          <button type="submit">Submit</button>
+          <button className="bg-white text-gray-600 rounded" type="submit">Submit</button>
         </form>
       </section>
     </div>
