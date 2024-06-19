@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-console.log()
+console.log();
 module.exports = {
   development: {
     client: "mysql",
