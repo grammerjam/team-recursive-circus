@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div className="App flex flex-col lg:flex-row">
         <Navbar />
-        <div className="w-screen bg-red-500">
+        <div className="w-screen px-6 lg:mt-8 lg:px-0">
           <SearchBar />
           <Routes>
             <Route path="/" element={<div>Home Page</div>} />

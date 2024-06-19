@@ -14,7 +14,10 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={handleSearch} className="flex items-start bg-amber-600">
+    <form
+      onSubmit={handleSearch}
+      className="flex items-start text-md my-6 md:text-lg md:my-0 md:mb-6 lg:mt-5"
+    >
       <img
         src={searchIcon}
         alt="Search Icon"
