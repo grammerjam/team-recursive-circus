@@ -5,7 +5,7 @@ import avatar from "../assets/image-avatar.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-semi-dark-blue m-6 p-6 flex justify-between items-center rounded-xl lg:flex-col lg:h-screen lg:w-20 lg:justify-normal">
+    <nav className="bg-semi-dark-blue mb-6 p-6 flex justify-between items-center md:m-6 md:rounded-xl lg:flex-col lg:h-screen lg:w-24 lg:m-8 lg:justify-normal">
       <img
         src={logo}
         alt="Logo"
@@ -48,7 +48,7 @@ const Navbar = () => {
       <img
         src={avatar}
         alt="Avatar"
-        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40] lg:h-[40] lg:mt-auto"
+        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px] lg:mt-auto"
       />
     </nav>
   );
