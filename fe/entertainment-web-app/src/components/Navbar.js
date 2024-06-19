@@ -5,7 +5,7 @@ import avatar from "../assets/image-avatar.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-semi-dark-blue mb-6 p-6 flex justify-between items-center md:m-6 md:rounded-xl lg:flex-col lg:h-screen lg:w-24 lg:m-8 lg:justify-normal">
+    <nav className="bg-semi-dark-blue p-6 flex justify-between items-center md:m-6 md:rounded-xl lg:flex-col lg:h-screen lg:w-24 lg:m-8 lg:justify-normal">
       <img
         src={logo}
         alt="Logo"
