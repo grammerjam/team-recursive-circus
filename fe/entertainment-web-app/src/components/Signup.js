@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import logoIcon from "../assets/logo.svg";
 const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -30,7 +30,8 @@ const Signup = () => {
   /* Form Color: #161d2f */
 
   return (
-    <div className="bg-[#10131d] flex flex-row justify-center w-full h-screen">
+    <div className="bg-[#10131d] flex flex-col justify-center items-center w-full h-screen">
+      <img src={logoIcon} alt="Logo" className="w-6 h-6" />
       <form class="bg-[#161d2f] shadow-2xl rounded-2xl overflow-hidden">
         <div class="px-8 py-10 md:px-10">
           <h2 class="text-4xl font-extrabold text-left text-zinc-800 dark:text-white">
@@ -92,7 +93,7 @@ const Signup = () => {
         <div class="px-8 pb-8">
           <div class="text-sm text-white text-center">
             Already have an account?
-            <a class="font-medium text-[#FC4747]" href="#">
+            <a class="tx-small px-2 text-[#FC4747]" href="#">
               Login
             </a>
           </div>
