@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Signup from "./components/Signup";
+
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           <Route path="/tv-series" element={<div>TV Series Page</div>} />
           <Route path="/bookmark" element={<div>Bookmark Page</div>} />
         </Routes>
-        <Signup /> 
+   
       </div>
     </Router>
   );
