@@ -7,6 +7,7 @@ function App() {
   return (
     <Router>
       <div className="App flex flex-col lg:flex-row">
+      <div className="App flex flex-col lg:flex-row">
         <Navbar />
         <div className="w-screen px-6 lg:mt-8 lg:px-0">
    
