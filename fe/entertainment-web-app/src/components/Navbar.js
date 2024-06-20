@@ -1,40 +1,41 @@
-import React, { useState } from "react";
-import searchIcon from "../assets/icon-search.svg";
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.svg";
+import homeIcon from "../assets/icon-nav-home.svg";
+import moviesIcon from "../assets/icon-nav-movies.svg";
+import tvSeriesIcon from "../assets/icon-nav-tv-series.svg";
+import bookmarkIcon from "../assets/icon-nav-bookmark.svg";
+import avatar from "../assets/image-avatar.png";
 
-const SearchBar = () => {
-  const [query, setQuery] = useState("");
-
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    // Placeholder for search functionality
-  };
-
+const Navbar = () => {
   return (
-    <form
-      onSubmit={handleSearch}
-      className="flex items-start text-md my-6 md:text-lg md:my-0 md:mb-6 lg:mt-5"
-    >
+    <nav className="bg-[#161d2f] text-white p-4 flex justify-between items-center rounded-xl lg:flex-col lg:h-screen lg:w-20 lg:justify-normal">
       <img
-        src={searchIcon}
-        alt="Search Icon"
-        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] mr-2"
+        src={logo}
+        alt="Logo"
+        className="w-[25px] h-[20px] md:w-[32px] md:h-[25.6px]"
       />
-      <input
-        type="text"
-        value={query}
-        onChange={handleInputChange}
-        placeholder="Search for movies or TV series"
-        className="bg-transparent focus:outline-none text-white placeholder-gray-400 flex-grow"
+      <div className="flex space-x-4 lg:flex-col lg:space-x-0 lg:space-y-8 lg:mt-16">
+        <Link to="/">
+          <img src={homeIcon} alt="Home" className="w-6 h-6" />
+        </Link>
+        <Link to="/movies">
+          <img src={moviesIcon} alt="Movies" className="w-6 h-6" />
+        </Link>
+        <Link to="/tv-series">
+          <img src={tvSeriesIcon} alt="TV Series" className="w-6 h-6" />
+        </Link>
+        <Link to="/bookmark">
+          <img src={bookmarkIcon} alt="Bookmark" className="w-6 h-6" />
+        </Link>
+      </div>
+      <img
+        src={avatar}
+        alt="Avatar"
+        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40] lg:h-[40] lg:mt-auto"
       />
-      <button type="submit" className="hidden">
-        Search
-      </button>
-    </form>
+    </nav>
   );
 };
 
-export default SearchBar;
+export default Navbar;
