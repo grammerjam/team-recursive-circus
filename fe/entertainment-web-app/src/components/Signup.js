@@ -46,7 +46,7 @@ const Signup = () => {
               ></label>
               <input
                 placeholder="Email address"
-                class="block w-full px-4 py-3 mt-2 bg-semi-dark-blue border-b-[#5a698f]"
+                class="block w-full px-4 py-3 mt-2 bg-semi-dark-blue border-b"
                 name="email"
                 id="email"
                 type="email"
