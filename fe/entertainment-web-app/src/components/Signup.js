@@ -30,11 +30,11 @@ const Signup = () => {
   /* Form Color: #161d2f */
 
   return (
-    <div className="bg-[#10131d] flex flex-col justify-center items-center w-full h-screen">
-      <img src={logoIcon} alt="Logo" className="w-6 h-6" />
-      <form class="bg-[#161d2f] shadow-2xl rounded-2xl overflow-hidden">
+    <div className="bg-dark-blue flex flex-col gap-16 justify-center items-center w-full h-screen">
+      <img src={logoIcon} alt="Logo" className="w-8 h-6" />
+      <form class="bg-semi-dark-blue  shadow-2xl rounded-2xl overflow-hidden">
         <div class="px-8 py-10 md:px-10">
-          <h2 class="text-4xl font-extrabold text-left text-zinc-800 dark:text-white">
+          <h2 class="font-outfit text-4xl text-left text-pure-white dark:text-pure-white">
             Sign Up
           </h2>
 
@@ -46,7 +46,7 @@ const Signup = () => {
               ></label>
               <input
                 placeholder="Email address"
-                class="block w-full px-4 py-3 mt-2 bg-[#161d2f] border-b"
+                class="block w-full px-4 py-3 mt-2 bg-semi-dark-blue border-b-[#5a698f]"
                 name="email"
                 id="email"
                 type="email"
@@ -59,7 +59,7 @@ const Signup = () => {
               ></label>
               <input
                 placeholder="Password"
-                class="block w-full px-4 py-3 mt-2 bg-[#161d2f] border-b"
+                class="block w-full px-4 py-3 mt-2 bg-semi-dark-blue border-b"
                 name="password"
                 id="password"
                 type="password"
@@ -73,7 +73,7 @@ const Signup = () => {
               ></label>
               <input
                 placeholder="Repeat Password"
-                class="block w-full px-4 py-3 mt-2 bg-[#161d2f] border-b"
+                class="block w-full px-4 py-3 mt-2 bg-semi-dark-blue border-b"
                 name="repeatPassword"
                 id="repeatPassword"
                 type="repeatPassword"
@@ -82,7 +82,7 @@ const Signup = () => {
             </div>
             <div class="mt-10">
               <button
-                class="w-full px-4 py-3 tracking-wide rounded text-white bg-[#FC4747] hover:bg-white hover:text-gray-500"
+                class="w-full px-4 py-3 tracking-wide rounded text-white bg-pure-red hover:bg-white hover:text-gray-500"
                 type="submit"
               >
                 Create an account
@@ -93,7 +93,7 @@ const Signup = () => {
         <div class="px-8 pb-8">
           <div class="text-sm text-white text-center">
             Already have an account?
-            <a class="tx-small px-2 text-[#FC4747]" href="#">
+            <a class="tx-small px-2 text-pure-red" href="#">
               Login
             </a>
           </div>
