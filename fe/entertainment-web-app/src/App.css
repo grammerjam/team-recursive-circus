@@ -2,3 +2,13 @@
   text-align: center;
   background-color: black;
 }
+
+.dot {
+  margin: 0 6px; /* Adjust the horizontal spacing */
+  color: #fff; /* Set the color to white, adjust based on your theme */
+  font-size: 1rem; /* Match the font size of the surrounding text or adjust as needed */
+}
+
+.trending-section .text-shadow {
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}

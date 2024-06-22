@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/Searchbar";
-import Trending from "./components/trending";
 import Recommended from "./components/Recommended";
+import Trending from "./components/Trending";
 
 function App() {
   return (

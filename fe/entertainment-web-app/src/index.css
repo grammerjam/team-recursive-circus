@@ -7,3 +7,13 @@
 body {
   @apply bg-background text-pure-white font-outfit;
 }
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
