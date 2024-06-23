@@ -27,7 +27,7 @@ const Signup = () => {
     }
   };
 
-  /* Form Color: #161d2f */
+
 
   return (
     <div className="bg-dark-blue flex flex-col gap-16 justify-center items-center w-full h-screen">
