@@ -34,7 +34,7 @@ const Login = () => {
     <div className="bg-dark-blue flex flex-col gap-16 justify-center items-center w-full h-screen">
       <img src={logoIcon} alt="Logo" className="w-8 h-6" />
       <form
-        className="bg-semi-dark-blue shadow-2xl rounded-2xl overflow-hidden"
+        className="bg-semi-dark-blue shadow-2xl rounded-2xl overflow-hidden mb-80"
         onSubmit={handleSubmit}
       >
         <div className="px-8 py-10 md:px-10">
