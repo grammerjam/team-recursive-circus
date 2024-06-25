@@ -4,6 +4,7 @@ console.log();
 module.exports = {
   development: {
     client: "mysql",
+    connection: process.env.CONNECTION_URI,
     migrations: {
       directory: "./migrations",
     },

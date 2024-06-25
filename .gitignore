@@ -1,3 +1,5 @@
+be/auth/config.js
+# dependencies
 # Dependency directories
 node_modules/
 npm-debug.log
