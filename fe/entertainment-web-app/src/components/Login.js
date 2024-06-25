@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import logoIcon from "../assets/logo.svg";
 
-const Signup = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    repeatPassword: "",
   });
   const [error, setError] = useState("");
 
@@ -19,11 +18,14 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password !== formData.repeatPassword) {
-      setError("Passwords do not match");
+    // Implement your form submission logic here
+    // For example, you could set an error if the form data is invalid
+    if (!formData.email || !formData.password) {
+      setError("Both fields are required");
     } else {
+      // Clear the error if form is valid
       setError("");
-      // Handle form submission (e.g., send data to a server)
+      // Perform the login action
       console.log("Form submitted:", formData);
     }
   };
@@ -37,7 +39,7 @@ const Signup = () => {
       >
         <div className="px-8 py-10 md:px-10">
           <h2 className="font-outfit text-4xl text-left text-pure-white dark:text-pure-white">
-            Sign Up
+            Login
           </h2>
 
           <div className="mt-10">
@@ -73,42 +75,28 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="mt-6">
-              <label
-                className="block mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-200"
-                htmlFor="repeatPassword"
-              ></label>
-              <input
-                placeholder="Repeat Password"
-                className="block w-full px-4 py-3 mt-2 bg-semi-dark-blue border-b"
-                name="repeatPassword"
-                id="repeatPassword"
-                type="password"
-                value={formData.repeatPassword}
-                onChange={handleChange}
-                required
-              />
-            </div>
+
             {error && (
               <div className="mt-4 text-red-500 text-sm">
                 {error}
               </div>
             )}
+
             <div className="mt-10">
               <button
                 className="w-full px-4 py-3 tracking-wide rounded text-white bg-pure-red hover:bg-white hover:text-gray-500"
                 type="submit"
               >
-                Create an account
+                Login to your account
               </button>
             </div>
           </div>
         </div>
         <div className="px-8 pb-8">
           <div className="text-sm text-white text-center">
-            Already have an account?
-            <a className="tx-small px-2 text-pure-red" href="/login">
-              Login
+            Don't have an account?
+            <a className="tx-small px-2 text-pure-red" href="/signup">
+              Sign Up
             </a>
           </div>
         </div>
@@ -117,4 +105,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
