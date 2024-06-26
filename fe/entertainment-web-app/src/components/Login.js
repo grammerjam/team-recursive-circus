@@ -18,8 +18,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement your form submission logic here
-    // For example, you could set an error if the form data is invalid
+
     if (!formData.email || !formData.password) {
       setError("Both fields are required");
     } else {
