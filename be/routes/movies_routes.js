@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db/db.js");
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   try {
+    console.log("GET /api/movies hit"); // Log when the route is hit
     const movies = await db("movie_data")
       .select(
         "movie_data.*",
@@ -32,6 +33,8 @@ router.get("/", async (req, res) => {
         "trending_images.large"
       );
 
+    console.log("Movies retrieved:", movies); // Log retrieved movies
+
     const formattedMovies = movies.map((movie) => ({
       ...movie,
       regular_images: JSON.parse(movie.regular_images || "{}"),
@@ -40,8 +43,8 @@ router.get("/", async (req, res) => {
 
     res.json(formattedMovies);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error" });
+    console.error("Error fetching movies:", err); // Log the error
+    next(err); // Forward error to the error-handling middleware
   }
 });
 

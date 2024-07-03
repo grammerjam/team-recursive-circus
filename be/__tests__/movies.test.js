@@ -9,7 +9,7 @@ describe("GET /api/movies", () => {
 
   it("should retrieve a list of movies", async () => {
     const res = await request(app).get("/api/movies");
-    console.log("Response:", res.body); // Log response for debugging
+    console.log("Response for retrieving movies:", res.body); // Log response
 
     expect(res.statusCode).toBe(200);
     expect(res.body).toBeInstanceOf(Array);
@@ -32,14 +32,23 @@ describe("GET /api/movies", () => {
   });
 
   it("should return 500 if there is a server error", async () => {
-    jest.spyOn(db, "select").mockImplementationOnce(() => {
+    // Mock the db.select function to throw an error
+    const selectMock = jest.spyOn(db, "select").mockImplementationOnce(() => {
       throw new Error("Server error");
     });
 
-    const res = await request(app).get("/api/movies");
-    console.log("Response:", res.body); // Log response for debugging
+    try {
+      const res = await request(app).get("/api/movies");
+      console.log("Response for server error test:", res.body); // Log response
 
-    expect(res.statusCode).toBe(500);
-    expect(res.body).toHaveProperty("error", "Server error");
+      expect(res.statusCode).toBe(500);
+      expect(res.body).toHaveProperty("error");
+      expect(res.body.error).toBe("Server error");
+    } catch (err) {
+      console.error("Caught error:", err); // Log any unexpected errors
+    } finally {
+      // Restore the original implementation of db.select
+      selectMock.mockRestore();
+    }
   });
 });

@@ -2,9 +2,17 @@ const express = require("express");
 require("dotenv").config();
 
 const app = express();
-const routes = require("./routes/movies_routes"); // Ensure the path is correct
+const routes = require("./routes/movies_routes");
 
-app.use("/api/movies", routes); // Use the correct path for the route
+app.use(express.json()); // Add this line to parse JSON requests
+
+app.use("/api/movies", routes);
+
+// Error-handling middleware
+app.use((err, req, res, next) => {
+  console.error("Global error handler:", err.stack); // Log the error stack
+  res.status(500).json({ error: err.message });
+});
 
 if (require.main === module) {
   const port = process.env.PORT || 3000;
