@@ -11,6 +11,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+        env:
+          MYSQL_ROOT_PASSWORD: ""  # No password as per your configuration
+          MYSQL_DATABASE: db
+
     strategy:
       matrix:
         node-version: ['18.x', '20.x']
@@ -24,10 +38,31 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - name: Change directory to 'be' and run tests
+    - name: Install dependencies
       run: |
         cd be/
         npm install   # Install dependencies, including Jest
+
+    - name: Set up environment variables
+      run: |
+        echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
+        echo "DB_USER=root" >> $GITHUB_ENV
+        echo "DB_PASSWORD=" >> $GITHUB_ENV
+        echo "DB_NAME=db" >> $GITHUB_ENV
+
+    - name: Wait for MySQL to be ready
+      run: |
+        for i in {30..0}; do
+          if mysqladmin ping -h127.0.0.1 -uroot > /dev/null 2>&1; then
+            break
+          fi
+          echo 'MySQL is unavailable - sleeping'
+          sleep 1
+        done
+
+    - name: Run tests
+      run: |
+        cd be/
         npm test      # Run tests using Jest
 
     - name: Upload test coverage
