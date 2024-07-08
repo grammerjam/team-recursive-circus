@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const { SECRET_KEY } = require("../config");
 const { UnauthorizedError } = require("../expressError");
 
+//authenticates JWT and stores on locals.user
 function authenticateJWT(req, res, next) {
   try {
     const authHeader = req.headers.authorization;
@@ -15,6 +16,7 @@ function authenticateJWT(req, res, next) {
   }
 }
 
+//middleware to ensure user is logged in 
 function isLoggedIn(req, res, next) {
   try {
     if (!res.locals.user) throw new UnauthorizedError();

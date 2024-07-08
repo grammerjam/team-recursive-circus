@@ -3,6 +3,7 @@ const express = require("express");
 const router = new express.Router();
 const { createUserToken } = require("../helpers/tokens");
 
+//POST to /auth/token to create user token
 router.post("/token", async function (req, res, next) {
   try {
     const { username, password } = req.body;
@@ -14,6 +15,8 @@ router.post("/token", async function (req, res, next) {
   }
 });
 
+
+//POST to /auth/register to create user token with new user
 router.post("/register", async function (req, res, next) {
   try {
     const newUser = await User.register({ ...req.body });
