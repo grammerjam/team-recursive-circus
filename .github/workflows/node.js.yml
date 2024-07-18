@@ -64,11 +64,20 @@ jobs:
           exit 1
         fi
 
+    - name: Print directory structure for debugging
+      run: |
+        cd be/
+        ls -R
+
     - name: Run database migrations
       run: |
         cd be/
-        npx knex migrate:latest
-        npx knex seed:run
+        npx knex migrate:latest --knexfile ../knexfile.js --cwd ./db
+
+    - name: Run database seeds
+      run: |
+        cd be/
+        npx knex seed:run --knexfile ../knexfile.js --cwd ./db
 
     - name: Print MySQL logs on failure
       if: failure()
