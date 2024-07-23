@@ -35,7 +35,7 @@ const Signup = () => {
         className="bg-semi-dark-blue shadow-2xl rounded-2xl overflow-hidden mb-80"
         onSubmit={handleSubmit}
       >
-        <div className="px-8 py-10 md:px-10">
+        <div className="px-8 py-10 md:px-10 lg:px-16">
           <h2 className="font-outfit text-4xl text-left text-pure-white dark:text-pure-white">
             Sign Up
           </h2>
